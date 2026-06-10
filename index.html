@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مسجد امام رضا (ع) | مدیریت هوشمند</title>
     
+    <!-- جلوگیری از کش مرورگر -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -248,15 +249,8 @@
     <div id="app" class="glass-card" style="max-width: 650px;"></div>
 
     <script>
-        // ثبت Service Worker جدید (sw-v2.js)
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw-v2.js').catch(err => console.log('SW not registered', err));
-        }
-    </script>
-
-    <script>
         // ========== Version Check ==========
-        const APP_VERSION = '2.1';  // این عدد را هر بار که فایل را بروز می‌کنید افزایش دهید
+        const APP_VERSION = '2.2';
         (function checkVersion() {
             const storedVersion = localStorage.getItem('app_version');
             if (storedVersion !== APP_VERSION) {
@@ -267,7 +261,7 @@
                     localStorage.setItem('messages', msgs);
                 }
                 localStorage.setItem('app_version', APP_VERSION);
-                // یک رفرش نرم انجام بده تا نسخه جدید لود شود
+                // رفرش نرم
                 window.location.reload(true);
             }
         })();
